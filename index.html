@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tahmin Oyunu</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 </head>
 
 <body>
@@ -29,9 +30,10 @@
 
     <div class="container gizle" id="oyunEkran">
         <h2>Lütfen tahmininizi asagidaki alana yaziniz.</h2>
-        <input type="number" id="tahminInp" placeholder="" min="1" max="50">
+        <input type="number" id="tahminInp">
         <button id="tahminEtBtn">Tahmin Et</button>
         <img class="cat cat-left" src="img/Asset 1.png" alt="cat">
+        <div class="bildiri" id="bildiri"></div>
     </div>
 
     <script src="script.js"></script>
