@@ -107,8 +107,37 @@ button:active {
     padding: 200px;
 }
 
+.bildiri {
+    margin-top: 50px;
+    font-size: 25px;
+}
 
+.blue {
+    color: #041d8b;  /*sayi cok büyük*/
+}
+
+.purple {
+    color: #a331ff;  /*sayi büyük ama yakin*/
+}
+
+.red {
+    color: #c50f0f;  /*sayi cok kücük*/
+}
+
+.orange {
+    color: #ff602f;  /*sayi cok kücük ama yakin*/
+}
+
+.green {
+    color: #0a8a64;  /*dogru bildink*/
+}
 
 .gizle {
     display: none;
+}
+
+
+#tahminInp::selection {
+  color: #FFE0E5;
+  background: #FC91A3;
 }
