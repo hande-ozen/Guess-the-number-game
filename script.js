@@ -156,7 +156,7 @@ function tahminKontrol() {
                 })
             );
         }, 250);
-        resultMessage.textContent = "❤️🎉 Tebrikler Dogru Bildiniz ❤️🎉";
+        resultMessage.textContent = "🎉❤️ Tebrikler Dogru Bildiniz ❤️🎉";
     }
 
     tahminInput.select();
