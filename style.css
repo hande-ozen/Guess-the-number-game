@@ -50,6 +50,46 @@ button:active {
     outline: none;
 }
 
+/********************************************************/
+
+.container {
+    text-align: center;
+    width: 90%;
+    padding: 100px;
+    min-height: 700px;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #FC91A3;
+    border: 5px solid #FFE0E5;
+    border-radius: 20px;
+    color: #FFE0E5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.popup {
+    position: absolute;
+    top: 100px;
+    left: calc(50% - 400px);
+    width: 800px;
+    padding: 100px;
+    background: #6958E3;
+    opacity: 0.9;
+    border: 5px solid #c0b7ff;
+    border-radius: 20px;
+    color: #ffffff;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    overflow: hidden;
+}
+
 .cat {
     display: flex;
     width: 400px;
@@ -71,69 +111,45 @@ button:active {
     width: 220px;
 }
 
-.container {
-    text-align: center;
-    width: 80%;
-    height: 900px;
-    margin-top: 60px;
-    margin-left: auto;
-    margin-right: auto;
-    background: #FC91A3;
-    border: 5px solid #FFE0E5;
-    border-radius: 20px;
-    color: #FFE0E5;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-}
+/********************************************************/
 
-.info {
-    position: absolute;
-    top: 100px;
-    left: calc(50% - 400px);
-    width: 800px;
-    height: 500px;
-    background: #6958E3;
-    opacity: 0.9;
-    border: 5px solid #c0b7ff;
-    color: #ffffff;
-    padding: 200px;
-}
-
-.bildiri {
+.resultMessage {
     margin-top: 50px;
     font-size: 25px;
 }
 
 .blue {
-    color: #041d8b;  /*sayi cok büyük*/
+    color: #041d8b;
+    /*sayi cok büyük*/
 }
 
 .purple {
-    color: #a331ff;  /*sayi büyük ama yakin*/
+    color: #a331ff;
+    /*sayi büyük ama yakin*/
 }
 
 .red {
-    color: #c50f0f;  /*sayi cok kücük*/
+    color: #c50f0f;
+    /*sayi cok kücük*/
 }
 
 .orange {
-    color: #ff602f;  /*sayi cok kücük ama yakin*/
+    color: #ff602f;
+    /*sayi cok kücük ama yakin*/
 }
 
 .green {
-    color: #0a8a64;  /*dogru bildink*/
+    color: #0a8a64;
+    /*dogru bildink*/
 }
 
-.gizle {
+.hidden {
     display: none;
 }
 
+/********************************************************/
 
 #tahminInp::selection {
-  color: #FFE0E5;
-  background: #FC91A3;
+    color: #FFE0E5;
+    background: #FC91A3;
 }

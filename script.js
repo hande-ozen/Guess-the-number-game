@@ -1,7 +1,7 @@
 // Containerlar
 const basla = document.getElementById("baslaEkran");
 const hazir = document.getElementById("oyunHazirEkran");
-const info = document.getElementById("infoEkran");
+const popup = document.getElementById("popupEkran");
 const oyun = document.getElementById("oyunEkran");
 
 // Inputlar
@@ -13,7 +13,7 @@ const oyunaHazirBtn = document.getElementById("oyunaHazirBtn");
 const tahminButonu = document.getElementById("tahminEtBtn");
 
 // Labellar
-const bildiri = document.getElementById("bildiri");
+const resultMessage = document.getElementById("resultMessage");
 
 // Game Logic (Oyun mantigi)
 const MAX = 50;
@@ -61,21 +61,19 @@ tahminButonu.onclick = tahminKontrol;
 
 
 function oyunaBasla() {
-    basla.classList.add("gizle");
-    hazir.classList.remove("gizle");
+    basla.classList.add("hidden");
+    hazir.classList.remove("hidden");
 
-    // infoyu göster
-    info.classList.remove("gizle");
+    popup.classList.remove("hidden");
 
-    // infoyu 1,5 sn sonra gizle
     setTimeout(() => {
-        info.classList.add("gizle");
+        popup.classList.add("hidden");
     }, 1000);
 }
 
 function oyunaHazir() {
-    hazir.classList.add("gizle");
-    oyun.classList.remove("gizle");
+    hazir.classList.add("hidden");
+    oyun.classList.remove("hidden");
 }
 
 function inputSayiSinirla() {
@@ -95,13 +93,13 @@ function inputTusKontrol(hangiTus) {
     }
 }
 
-function bildiriRenkVer(hangiRenk) {
-    bildiri.classList.remove("purple");
-    bildiri.classList.remove("red");
-    bildiri.classList.remove("orange");
-    bildiri.classList.remove("green");
-    bildiri.classList.remove("blue");
-    bildiri.classList.add(hangiRenk);
+function resultMessageRenkVer(hangiRenk) {
+    resultMessage.classList.remove("purple");
+    resultMessage.classList.remove("red");
+    resultMessage.classList.remove("orange");
+    resultMessage.classList.remove("green");
+    resultMessage.classList.remove("blue");
+    resultMessage.classList.add(hangiRenk);
 }
 
 function tahminKontrol() {
@@ -110,23 +108,23 @@ function tahminKontrol() {
 
     if (tahminInput.value > randomSayi) {
         if (farkYuzdelik > 20) {
-            bildiriRenkVer("blue");
-            bildiri.textContent = "Sayiniz Cok Fazla Büyük ❄️";
+            resultMessageRenkVer("blue");
+            resultMessage.textContent = "Sayiniz Cok Fazla Büyük ❄️";
         } else {
-            bildiriRenkVer("purple");
-            bildiri.textContent = "Sayiniz Büyük Ama Yakin 🍀";
+            resultMessageRenkVer("purple");
+            resultMessage.textContent = "Sayiniz Büyük Ama Yakin 🍀";
         }
     } else if (tahminInput.value < randomSayi) {
         if (farkYuzdelik > 20) {
-            bildiriRenkVer("red");
-            bildiri.textContent = "Sayiniz Cok Fazla Kücük ❄️";
+            resultMessageRenkVer("red");
+            resultMessage.textContent = "Sayiniz Cok Fazla Kücük ❄️";
         } else {
-            bildiriRenkVer("orange");
-            bildiri.textContent = "Sayiniz Kücük Ama Yakin 🍀";
+            resultMessageRenkVer("orange");
+            resultMessage.textContent = "Sayiniz Kücük Ama Yakin 🍀";
         }
 
     } else if (tahminInput.value == randomSayi) {
-        bildiriRenkVer("green");
+        resultMessageRenkVer("green");
         const duration = 3 * 1000,
             animationEnd = Date.now() + duration,
             defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
@@ -158,9 +156,8 @@ function tahminKontrol() {
                 })
             );
         }, 250);
-        bildiri.textContent = "❤️🎉 Tebrikler Dogru Bildiniz ❤️🎉";
+        resultMessage.textContent = "❤️🎉 Tebrikler Dogru Bildiniz ❤️🎉";
     }
 
-    // input yazisini sec ki silmeye gerek kalmadan direkt yazilabilsin
     tahminInput.select();
 }
