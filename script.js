@@ -68,7 +68,7 @@ function oyunaBasla() {
 
     setTimeout(() => {
         popup.classList.add("hidden");
-    }, 1000);
+    }, 5000);
 }
 
 function oyunaHazir() {
